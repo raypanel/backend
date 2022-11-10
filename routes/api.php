@@ -25,4 +25,7 @@ Route::group([
 ], function () {
     Route::post('auth/register', [\App\Http\Controllers\Api\V1\AuthController::class, 'register'])
         ->name('register');
+
+    Route::get('auth/login', [\App\Http\Controllers\Api\V1\AuthController::class, 'login'])
+        ->name('login');
 });
