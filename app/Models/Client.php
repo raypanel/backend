@@ -61,9 +61,6 @@ class Client extends Model
      */
     protected $casts = [
         'is_payed' => 'boolean',
-        'payed_at' => 'datetime',
-        'started_at' => 'datetime',
-        'finished_at' => 'datetime',
     ];
 
     /*
