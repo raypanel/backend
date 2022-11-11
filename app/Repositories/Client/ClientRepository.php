@@ -14,4 +14,15 @@ class ClientRepository extends BaseRepository implements ClientRepositoryInterfa
     {
         return Client::class;
     }
+
+    public function getClients(array $where = [], $paginate = 20)
+    {
+        $this->applyConditions($where);
+
+        $data = $this->orderBy('id', 'DESC')
+            ->paginate($paginate);
+
+        $this->resetModel();
+        return $data;
+    }
 }
