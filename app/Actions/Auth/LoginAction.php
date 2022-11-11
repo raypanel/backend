@@ -31,7 +31,7 @@ class LoginAction
         if (! $user) {
             throw (new ModelNotFoundException())->setModel(User::class);
         }
-        dd('s');
+
         if (! Hash::check($data->password, $user->password)) {
             throw new InvalidPasswordException();
         }
