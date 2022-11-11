@@ -28,4 +28,9 @@ Route::group([
 
     Route::post('auth/login', [\App\Http\Controllers\Api\V1\AuthController::class, 'login'])
         ->name('login');
+
+    Route::group(['middleware' => ['auth:sanctum']], function () {
+        Route::get('/clients', [\App\Http\Controllers\Api\V1\ClientController::class, 'index'])
+            ->name('clients.index');
+    });
 });
