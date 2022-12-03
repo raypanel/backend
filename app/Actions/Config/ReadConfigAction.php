@@ -19,6 +19,14 @@ class ReadConfigAction
         $this->setClients();
     }
 
+    /**
+     * @return mixed
+     */
+    public function getConfigPath(): mixed
+    {
+        return $this->configPath;
+    }
+
     public function getConfig()
     {
          return $this->config;
