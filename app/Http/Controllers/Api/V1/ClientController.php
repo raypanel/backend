@@ -21,4 +21,12 @@ class ClientController extends Controller
 
         return apiResponse(true, $client, Response::HTTP_CREATED);
     }
+
+    public function restart()
+    {
+        $command = env('RESTART_DOCKER');
+        $shell = shell_exec($command);
+
+        return apiResponse(true, ['success']);
+    }
 }

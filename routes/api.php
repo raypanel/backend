@@ -35,5 +35,8 @@ Route::group([
 
         Route::post('/clients', [\App\Http\Controllers\Api\V1\ClientController::class, 'store'])
             ->name('clients.store');
+
+        Route::post('/restart-docker', [\App\Http\Controllers\Api\V1\ClientController::class, 'restart'])
+            ->name('clients.restart');
     });
 });
