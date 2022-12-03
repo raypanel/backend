@@ -24,7 +24,7 @@ class ClientsResource extends Resource
             'payed_at' => $this['payed_at'],
             'started_at' => $this['started_at'],
             'finished_at' => $this['finished_at'],
-            'remaining_time' => Carbon::parse($this['finished_at'])->diff($this['started_at'])->days
+            'remaining_time' => Carbon::parse($this['finished_at'] ?? now()->addMonth())->diff($this['started_at'])->days
         ];
     }
 }

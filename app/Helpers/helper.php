@@ -8,6 +8,6 @@ function apiResponse($success, $data = [], $code = 0): Response|Application|Resp
 {
     return response([
         'success' => (bool)$success,
-        $success ? 'data' : 'errors' => $data,
+        $success ? 'data' : 'errors' => json_decode($data),
     ], $code ? $code : ($success ? 200 : 422));
 }
